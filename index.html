@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-    <title>প্রতিষ্ঠানের ম্যানেজমেন্ট সিস্টেম - Anas Tech</title>
+    <meta name="theme-color" content="#0f3d31" />
+    <title>মসজিদ ম্যানেজমেন্ট সিস্টেম - Anas Tech</title>
 
-    <!-- Anas Tech কোম্পানির আসল লোগো ফেভিকন হিসেবে -->
     <link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/d/1OmiyuOhFUBWfQUvupjZC5cEZ6zC-sPHY=w1000" />
     <link rel="preconnect" href="https://script.google.com" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -13,16 +13,15 @@
 
     <style>
         * { box-sizing: border-box; font-family: 'SolaimanLipi', sans-serif !important; }
-        html, body { margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden; background: #0f172a; color: #1e293b; }
+        html, body { margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden; background: #0f3d31; color: #1e293b; }
 
-        .login-overlay { position: fixed; inset: 0; display: none; justify-content: center; align-items: center; z-index: 99999; padding: 20px; background: #f8fafc; }
+        .login-overlay { position: fixed; inset: 0; display: none; justify-content: center; align-items: center; z-index: 99999; padding: 20px; background: #f3f5f1; }
         .login-overlay.show { display: flex; }
         .login-card { background: #fff; padding: 30px 20px; border-radius: 20px; box-shadow: 0 10px 25px -5px rgba(0,0,0,.1); width: 100%; max-width: 420px; text-align: center; border: 1px solid #e2e8f0; }
-        
-        /* Anas Tech লোগো ডিজাইন স্টাইল */
+
         .company-logo { width: 95px; height: 95px; margin: 0 auto 12px auto; object-fit: contain; display: block; border-radius: 50%; box-shadow: 0 4px 12px rgba(0,0,0,0.12); }
-        
-        .login-card h2 { margin: 0 0 6px; font-size: 22px; font-weight: 700; color: #0f172a; }
+
+        .login-card h2 { margin: 0 0 6px; font-size: 22px; font-weight: 700; color: #0f3d31; }
         .login-card p { margin: 0 0 18px; color: #64748b; font-size: 13px; line-height: 1.5; }
 
         .error-msg { background: #fef2f2; border: 1px solid #fecaca; color: #dc2626; padding: 10px; border-radius: 10px; font-size: 13px; margin-bottom: 14px; display: none; text-align: center; }
@@ -30,26 +29,26 @@
         .input-group { margin-bottom: 12px; text-align: left; }
         .input-group label { display: block; margin-bottom: 4px; font-size: 13px; color: #334155; font-weight: 600; }
         .input-group input { width: 100%; padding: 10px 14px; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 10px; color: #0f172a; font-size: 14px; outline: none; transition: all .2s ease; }
-        .input-group input:focus { border-color: #0284c7; background: #fff; box-shadow: 0 0 0 3px rgba(2,132,199,.15); }
+        .input-group input:focus { border-color: #0f5c47; background: #fff; box-shadow: 0 0 0 3px rgba(15,92,71,.18); }
 
         .password-wrapper { position: relative; }
         .password-wrapper input { padding-right: 42px; }
         .toggle-pass-btn { position: absolute; top: 50%; right: 10px; transform: translateY(-50%); background: none; border: none; cursor: pointer; font-size: 16px; color: #64748b; }
 
-        .login-btn { width: 100%; padding: 12px; background: #0284c7; border: none; border-radius: 10px; color: #fff; font-size: 15px; font-weight: bold; cursor: pointer; transition: background .2s ease; margin-top: 6px; }
-        .login-btn:hover { background: #0369a1; }
+        .login-btn { width: 100%; padding: 12px; background: #0f5c47; border: none; border-radius: 10px; color: #fff; font-size: 15px; font-weight: bold; cursor: pointer; transition: background .2s ease; margin-top: 6px; }
+        .login-btn:hover { background: #0b4636; }
         .login-btn:disabled { background: #94a3b8; cursor: not-allowed; }
 
-        .switch-inst-btn { position: fixed; top: 10px; right: 10px; z-index: 9999; background: rgba(15, 23, 42, 0.7); color: #fff; border: 1px solid rgba(255,255,255,0.2); padding: 6px 12px; border-radius: 8px; font-size: 12px; cursor: pointer; backdrop-filter: blur(4px); }
+        .switch-inst-btn { position: fixed; top: 10px; right: 10px; z-index: 9999; background: rgba(15, 61, 49, 0.75); color: #fff; border: 1px solid rgba(255,255,255,0.2); padding: 6px 12px; border-radius: 8px; font-size: 12px; cursor: pointer; backdrop-filter: blur(4px); }
         .switch-inst-btn:hover { background: #ef4444; border-color: #ef4444; }
 
         #bootLoader { position: fixed; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 12px; z-index: 100000; background: #fff; }
-        #bootLoader .spinner { width: 36px; height: 36px; border: 3px solid #e2e8f0; border-top-color: #0284c7; border-radius: 50%; animation: spin .8s linear infinite; }
+        #bootLoader .spinner { width: 36px; height: 36px; border: 3px solid #e2e8f0; border-top-color: #0f5c47; border-radius: 50%; animation: spin .8s linear infinite; }
         #bootLoader span { color: #64748b; font-size: 14px; }
         @keyframes spin { to { transform: rotate(360deg); } }
 
-        .main-container { position: fixed; inset: 0; overflow: hidden; display: none; background-color: #0f172a; padding-top: env(safe-area-inset-top, 35px); padding-bottom: env(safe-area-inset-bottom, 20px); }
-        iframe { width: 100%; height: 100%; border: none; display: block; background-color: #0f172a; }
+        .main-container { position: fixed; inset: 0; overflow: hidden; display: none; background-color: #0f3d31; padding-top: env(safe-area-inset-top, 35px); padding-bottom: env(safe-area-inset-bottom, 20px); }
+        iframe { width: 100%; height: 100%; border: none; display: block; background-color: #f3f5f1; }
     </style>
 </head>
 <body>
@@ -63,16 +62,15 @@
 
     <div class="login-overlay" id="loginOverlay">
         <div class="login-card" id="loginCardContainer">
-            <!-- আপনার গুগল ড্রাইভের আসল লোগো লিঙ্ক -->
             <img src="https://lh3.googleusercontent.com/d/1OmiyuOhFUBWfQUvupjZC5cEZ6zC-sPHY=w1000" alt="Anas Tech Logo" class="company-logo" />
-            <h2>Anas Tech সফটওয়্যার পোর্টাল</h2>
-            <p>আপনার প্রতিষ্ঠানের আইডি, ইউজারনেম ও পাসওয়ার্ড দিন</p>
+            <h2>মসজিদ ম্যানেজমেন্ট পোর্টাল</h2>
+            <p>আপনার মসজিদের কোড, ইউজারনেম ও পাসওয়ার্ড দিন</p>
 
             <div class="error-msg" id="errorBlock"></div>
 
             <div class="input-group">
-                <label for="instId">প্রতিষ্ঠানের কোড (Institution ID)</label>
-                <input type="text" id="instId" placeholder="যেমন: ATMS0001" autocomplete="off" required />
+                <label for="instId">মসজিদের কোড</label>
+                <input type="text" id="instId" placeholder="যেমন: MSJ0001" autocomplete="off" required />
             </div>
 
             <div class="input-group">
@@ -93,33 +91,33 @@
     </div>
 
     <div class="main-container" id="mainAppContainer">
-        <iframe id="appIframe"></iframe>
+        <iframe id="appIframe" allow="clipboard-write; fullscreen"></iframe>
     </div>
 
     <script>
-        var GOOGLE_SCRIPT_API = "https://script.google.com/macros/s/AKfycbwFUgmeI8blj_0VJyzj8ZpoRvsdO_m1peEV_RiQd2ha0G8XyRyxqdxq_DX9dHm36k1p0g/exec";
+        var GOOGLE_SCRIPT_API = "https://script.google.com/macros/s/AKfycbzAHuSF8JNuPB3QawT4OlRhTkQ3bfiFEC91NOqeyuUptbUUt_zBA9tUDM4Gk01-g3guBA/exec";
 
-        function getSavedSession() { try { return localStorage.getItem('sms_session_token'); } catch (e) { return null; } }
-        function getSavedInst() { try { return localStorage.getItem('sms_institution_id'); } catch (e) { return null; } }
-        function saveSession(token, inst) { 
-            try { 
-                if (token) localStorage.setItem('sms_session_token', token); 
-                if (inst) localStorage.setItem('sms_institution_id', inst);
-            } catch (e) {} 
+        function getSavedSession() { try { return localStorage.getItem('mosque_session_token'); } catch (e) { return null; } }
+        function getSavedInst() { try { return localStorage.getItem('mosque_institution_id'); } catch (e) { return null; } }
+        function saveSession(token, inst) {
+            try {
+                if (token) localStorage.setItem('mosque_session_token', token);
+                if (inst) localStorage.setItem('mosque_institution_id', inst);
+            } catch (e) {}
         }
-        function clearSavedSession() { 
-            try { 
-                localStorage.removeItem('sms_session_token'); 
-                localStorage.removeItem('sms_institution_id');
-            } catch (e) {} 
+        function clearSavedSession() {
+            try {
+                localStorage.removeItem('mosque_session_token');
+                localStorage.removeItem('mosque_institution_id');
+            } catch (e) {}
         }
 
         function hideBootLoader() { var l = document.getElementById('bootLoader'); if (l) l.style.display = 'none'; }
         function showBootLoader(text) { var l = document.getElementById('bootLoader'); if (l) { l.querySelector('span').textContent = text || 'লোড হচ্ছে…'; l.style.display = 'flex'; } }
-        function showLoginForm() { 
-            hideBootLoader(); 
+        function showLoginForm() {
+            hideBootLoader();
             document.getElementById('switchBtn').style.display = 'none';
-            document.getElementById('loginOverlay').classList.add('show'); 
+            document.getElementById('loginOverlay').classList.add('show');
         }
         function showMsg(text) { var e = document.getElementById('errorBlock'); e.innerText = text; e.style.display = 'block'; }
 
@@ -127,7 +125,7 @@
 
         function openApp(instId) {
             document.getElementById('loginOverlay').classList.remove('show');
-            document.getElementById('switchBtn').style.display = 'block'; 
+            document.getElementById('switchBtn').style.display = 'block';
             var frame = document.getElementById('appIframe');
             showBootLoader('লোড হচ্ছে…');
 
@@ -147,10 +145,10 @@
         }
 
         function logoutAndSwitch() {
-            clearSavedSession(); 
+            clearSavedSession();
             document.getElementById('mainAppContainer').style.display = 'none';
             document.getElementById('appIframe').removeAttribute('src');
-            showLoginForm(); 
+            showLoginForm();
         }
 
         function togglePasswordVisibility() {
@@ -178,7 +176,7 @@
             var btn = document.getElementById('loginBtn');
 
             if (!inst || !user || !key) {
-                showMsg('❌ প্রতিষ্ঠানের আইডি, ইউজারনেম এবং পাসওয়ার্ড সবগুলো সঠিকভাবে দিন।');
+                showMsg('❌ মসজিদের কোড, ইউজারনেম এবং পাসওয়ার্ড সবগুলো সঠিকভাবে দিন।');
                 return;
             }
 
@@ -196,7 +194,7 @@
                         saveSession(data.session, inst);
                         openApp(inst);
                     } else {
-                        showMsg("❌ " + (data && data.error ? data.error : "ভুল প্রতিষ্ঠান আইডি, ইউজারনেম অথবা পাসওয়ার্ড!"));
+                        showMsg("❌ " + (data && data.error ? data.error : "ভুল মসজিদের কোড, ইউজারনেম অথবা পাসওয়ার্ড!"));
                         btn.innerText = "🔑 প্রবেশ করুন";
                         btn.disabled = false;
                     }
@@ -209,7 +207,6 @@
         }
     </script>
 
-    <!-- আগের PWA Service Worker ফোনে জমে থাকলে সেটা মুছে ফেলবে (পুরোনো ক্যাশ যাতে সমস্যা না করে) -->
     <script>
         if ("serviceWorker" in navigator) {
             navigator.serviceWorker.getRegistrations().then(function (regs) {
